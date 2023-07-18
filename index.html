@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>World Clock</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>World Clock</h1>
+  <div class="panels">
+    <div class="panel dawn" id="tokyo">
+      <h2>Tokyo</h2>
+      <div class="flag-icon tokyo"></div>
+      <p>Current Time: <span id="tokyo-time"></span></p>
+    </div>
+
+    <div class="panel morning" id="beijing">
+      <h2>Beijing</h2>
+      <div class="flag-icon beijing"></div>
+      <p>Current Time: <span id="beijing-time"></span></p>
+    </div>
+
+    <div class="panel afternoon-1" id="istanbul">
+      <h2>Istanbul</h2>
+      <div class="flag-icon istanbul"></div>
+      <p>Current Time: <span id="istanbul-time"></span></p>
+    </div>
+
+    <div class="panel afternoon-2" id="london">
+      <h2>London</h2>
+      <div class="flag-icon london"></div>
+      <p>Current Time: <span id="london-time"></span></p>
+    </div>
+
+    <div class="panel evening-1" id="moscow">
+      <h2>Moscow</h2>
+      <div class="flag-icon moscow"></div>
+      <p>Current Time: <span id="moscow-time"></span></p>
+    </div>
+
+    <div class="panel evening-2" id="vancouver">
+      <h2>Vancouver</h2>
+      <div class="flag-icon vancouver"></div>
+      <p>Current Time: <span id="vancouver-time"></span></p>
+    </div>
+  </div>
+
+  <script>
+    function updateTime(city, offset) {
+      const now = new Date();
+      const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+      const time = new Date(utc + offset * 3600000);
+      document.getElementById(city + "-time").textContent = time.toLocaleTimeString();
+    }
+
+    function updateClocks() {
+      updateTime("tokyo", 9);
+      updateTime("beijing", 8);
+      updateTime("istanbul", 3);
+      updateTime("london", 0);
+      updateTime("moscow", 3);
+      updateTime("vancouver", -7);
+    }
+
+    setInterval(updateClocks, 1000);
+    updateClocks(); // Initial update on page load
+  </script>
+</body>
+</html>
+
+

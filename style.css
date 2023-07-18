@@ -1,0 +1,91 @@
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    html {
+      font-family: 'Open Sans Condensed', sans-serif;
+      color: white; /* Replace with your desired text color */
+    }
+    body {
+      margin: 0;
+        background-image: url('https://www.nawpic.com/media/2020/desktop-backgrounds-nawpic-12.jpg'); /* Replace with the path to your background image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+      h1 {
+      text-align: center; /* Center align the h1 element */
+    }
+    h2 {
+      text-transform: uppercase;
+      font-weight: lighter;
+      font-size: 40px;
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+    .panels {
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      font-size: 20px;
+    }
+    .panel {
+      flex: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+     background: linear-gradient(); /* Replace with your desired gradient colors */
+      border-right: 1px solid rgba(85, 85, 85, .3); /* Replace with your desired border color */
+      cursor: pointer;
+      transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.3s;
+    }
+    .panel.open {
+      flex: 4;
+      font-size: 30px;
+    }
+    .panel > * {
+      flex: 1 0 auto;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.5s;
+    }
+    .panel > *:first-child {
+      justify-content: flex-end;
+    }
+    .panel > *:last-child {
+      justify-content: flex-start;
+    }
+    /* Add the flag icons styles */
+    .flag-icon {
+      width: 120px;
+      height: 50px;
+      background-size: cover;
+    }
+    .flag-icon.tokyo {
+      background-image: url('images/tokyo.jpg'); /* Replace with the path to Tokyo's flag image */
+    }
+    .flag-icon.beijing {
+      background-image: url('images/beijing.jpg'); /* Replace with the path to Beijing's flag image */
+    }
+    .flag-icon.istanbul {
+      background-image: url('images/instanbul.avif'); /* Replace with the path to Istanbul's flag image */
+    }
+    .flag-icon.london {
+      background-image: url('images/london.jpg'); /* Replace with the path to London's flag image */
+    }
+    .flag-icon.moscow {
+      background-image: url('images/moscow.jpg'); /* Replace with the path to Moscow's flag image */
+    }
+    .flag-icon.vancouver {
+      background-image: url('images/vancouver.png'); /* Replace with the path to Vancouver's flag image */
+    }
